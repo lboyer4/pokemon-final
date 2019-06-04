@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { setPokemon } from '../../actions';
+import { setPokemon, setError, setLoading } from '../../actions';
+import CardHolder from './../CardHolder/CardHolder.js';
 
 export class App extends Component {
 	constructor() {
@@ -14,25 +15,37 @@ export class App extends Component {
 		fetch('http://localhost:3001/pokemon')
 		.then(response => response.json())
 		.then(pokemon => this.storePokemon(pokemon))
-		.catch(error => console.log(error))
+		.catch(error => this.props.setError('you have an error', error))
 	}
 
 	storePokemon = (pokemon) => {
-		console.log(pokemon)
 		this.props.setPokemon(pokemon)
+		this.props.setLoading(false)
 	}
 
-	render() {
+	render(props) {
+		console.log(this.props)
+		const message = this.props.loading && 'your data is loading';
 		return (
 			<div>
-			hello
+				<h1> Pokemon </h1>
+				<h2> {message} </h2>
+				<p> {this.props.error} </p>
+				<CardHolder />
 			</div>
 		)
 	}
 }
 
-export const mapDispatchToProps = (dispatch) => ({
-	setPokemon: (pokemon) => dispatch(setPokemon(pokemon))
+export const mapStateToProps = (state) => ({
+	error: state.error,
+	loading: state.loading
 })
 
-export default connect(null, mapDispatchToProps)(App)
+export const mapDispatchToProps = (dispatch) => ({
+	setPokemon: (pokemon) => dispatch(setPokemon(pokemon)),
+	setError: (error) => dispatch(setError(error)),
+	setLoading: (bool) => dispatch(setLoading(bool))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
