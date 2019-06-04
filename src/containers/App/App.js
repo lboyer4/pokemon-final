@@ -12,7 +12,7 @@ export class App extends Component {
 	}
 
 	componentDidMount = () => {
-		fetch('http://loclhost:3001/pokemon')
+		fetch('http://localhost:3001/pokemon')
 		.then(response => response.json())
 		.then(pokemon => this.storePokemon(pokemon))
 		.catch(error => this.props.setError('you have an error', error))
