@@ -15,7 +15,7 @@ describe('mapStateToProps', () => {
 		const mappedProps = mapStateToProps(mockState)
 
 		expect(mappedProps).toEqual(expected)
-	})
+	});
 
 		it('should return an object with a loading boolean', () => {
 
