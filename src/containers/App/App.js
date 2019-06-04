@@ -12,7 +12,7 @@ export class App extends Component {
 	}
 
 	componentDidMount = () => {
-		fetch('http://localhost:3001/pokemon')
+		fetch('http://loclhost:3001/pokemon')
 		.then(response => response.json())
 		.then(pokemon => this.storePokemon(pokemon))
 		.catch(error => this.props.setError('you have an error', error))
@@ -24,12 +24,13 @@ export class App extends Component {
 	}
 
 	render(props) {
-		console.log(this.props)
 		const message = this.props.loading && 'your data is loading';
+		const giphy = this.props.loading && <img src="https://66.media.tumblr.com/c99a579db3ae0fc164bf4cca148885d3/tumblr_mjgv8kEuMg1s87n79o1_400.gif" />
 		return (
 			<div>
 				<h1> Pokemon </h1>
 				<h2> {message} </h2>
+				{giphy}
 				<p> {this.props.error} </p>
 				<CardHolder />
 			</div>
