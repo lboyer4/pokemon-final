@@ -19,7 +19,7 @@ describe('mapStateToProps', () => {
 
 		expect(mappedProps).toEqual(expected)
 	})
-	
+
 	it('should return an object with a error string', () => {
 
 		const mockState = {
@@ -53,7 +53,8 @@ describe('mapStateToProps', () => {
 })
 
 describe('mapDispatchToProps', () => {
-	it('should call dispatch with a set setPokemon action whe setPokemon is called', () => {
+
+	it('should call dispatch with a set setPokemon action when setPokemon is called', () => {
 		const mockDispatch = jest.fn()
 
 		const actionToDispatch = setPokemon(['one', 'two'])
@@ -65,7 +66,7 @@ describe('mapDispatchToProps', () => {
 		expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
 	});
 
-		it('should call dispatch with a set setError action whe setError is called', () => {
+		it('should call dispatch with a set setError action when setError is called', () => {
 		const mockDispatch = jest.fn()
 
 		const actionToDispatch = setError('error')
@@ -77,7 +78,7 @@ describe('mapDispatchToProps', () => {
 		expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
 	});
 
-	it('should call dispatch with a set setLoading action whe setLoading is called', () => {
+	it('should call dispatch with a set setLoading action when setLoading is called', () => {
 		const mockDispatch = jest.fn()
 
 		const actionToDispatch = setLoading(false)
