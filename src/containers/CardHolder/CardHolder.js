@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from './../Card/Card.js';
 import { connect } from 'react-redux';
-import { setPokemon } from '../../actions'
+import './CardHolder.css';
 
 export const CardHolder = (props) => {
 	
@@ -11,7 +11,7 @@ export const CardHolder = (props) => {
 
 	return (
 
-		<div>
+		<div className="holder">
 			{cards}
 		</div>
 

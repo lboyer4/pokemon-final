@@ -1,5 +1,6 @@
 import React from 'react';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import './Card.css';
 
 export const Card = (props) => {
 	console.log(props)
@@ -7,11 +8,11 @@ export const Card = (props) => {
 
 	return (
 	
-		<div>
-			<h2> {name} </h2>
-			<h4> {weight} </h4>
-			<img src="sprites" />
-		</div>
+		<article>
+			<h2> Name: {name} </h2>
+			<h4> Weight: {weight} kg </h4>
+			<img src="{sprites}" />
+		</article>
 	)
 }
 
