@@ -11,7 +11,7 @@ export const Card = (props) => {
 		<article>
 			<h2> Name: {name} </h2>
 			<h4> Weight: {weight} kg </h4>
-			<img src={picture} />
+			<img src={picture} alt="pokemon" />
 		</article>
 	)
 }

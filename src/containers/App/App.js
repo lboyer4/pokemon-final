@@ -29,7 +29,7 @@ export class App extends Component {
 		const giphy = this.props.loading && <img src="https://66.media.tumblr.com/c99a579db3ae0fc164bf4cca148885d3/tumblr_mjgv8kEuMg1s87n79o1_400.gif" alt="running pokemon" />
 		return (
 			<div className="main">
-				<h1> Pokemon </h1>
+				<h1> Pokemon: Gotta Catch 'em All </h1>
 				<h2> {message} </h2>
 				{giphy}
 				<p> {this.props.error} </p>
