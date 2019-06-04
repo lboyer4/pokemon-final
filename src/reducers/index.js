@@ -7,4 +7,4 @@ export const rootReducer = combineReducers({
 	pokemon: pokemonReducer,
 	error: errorReducer,
 	loading: loadingReducer
-})
+});

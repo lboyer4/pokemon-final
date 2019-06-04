@@ -2,7 +2,6 @@ import { pokemonReducer } from './pokemonReducer.js';
 import {loadingReducer} from './loadingReducer.js/';
 import { errorReducer } from './errorReducer';
 
-
 describe('pokemonReducer', () => {
 	it('should return the initial state', () => {
 		const expected = []
@@ -10,7 +9,7 @@ describe('pokemonReducer', () => {
 		const result = pokemonReducer(undefined, {})
 
 		expect(result).toEqual(expected)
-	})
+	});
 
 	it('should return the array object of pokemon', () => {
 		const expected = ['pokemoneone', 'pokemonetwo']
@@ -28,7 +27,7 @@ describe('loadingReducer', () => {
 		const result = loadingReducer(undefined, {})
 
 		expect(result).toEqual(expected)
-	})
+	});
 
 	it('should return false with a type of SET_LOADING', () => {
 		const expected = false;
@@ -36,8 +35,8 @@ describe('loadingReducer', () => {
 		const result = loadingReducer(true, {type: 'SET_LOADING', bool: false })
 
 		expect(result).toEqual(expected)
-	})
-})
+	});
+});
 
 describe('errorReducer', () => {
 	it('should return initial state', () => {
@@ -46,7 +45,7 @@ describe('errorReducer', () => {
 		const result = errorReducer(undefined,{})
 
 		expect(result).toEqual(expected)
-	})
+	});
 
 	it('should return a message with a status of SET_ERROR', () => {
 
@@ -55,6 +54,6 @@ describe('errorReducer', () => {
 		const result = errorReducer(undefined, {type: 'SET_ERROR', error: 'Danger Will Robinson!'})
 
 		expect(result).toEqual(expected)
-	})
-})
+	});
+});
 

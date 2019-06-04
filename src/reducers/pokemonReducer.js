@@ -6,6 +6,5 @@ export const pokemonReducer = (state=initialState, action) => {
 			return action.pokemon
 		default: 
 			return state
-
-	}
-}
+	};
+};

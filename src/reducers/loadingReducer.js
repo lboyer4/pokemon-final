@@ -1,4 +1,4 @@
-const initialState = true
+const initialState = true;
 
 export const loadingReducer = (state=initialState, action) => {
 	switch(action.type) {
@@ -6,6 +6,5 @@ export const loadingReducer = (state=initialState, action) => {
 			return action.bool
 		default: 
 			return state
-
-	}
-}
+	};
+};

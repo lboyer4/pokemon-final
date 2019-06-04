@@ -38,12 +38,12 @@ export class App extends Component {
 export const mapStateToProps = (state) => ({
 	error: state.error,
 	loading: state.loading
-})
+});
 
 export const mapDispatchToProps = (dispatch) => ({
 	setPokemon: (pokemon) => dispatch(setPokemon(pokemon)),
 	setError: (error) => dispatch(setError(error)),
 	setLoading: (bool) => dispatch(setLoading(bool))
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)

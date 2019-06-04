@@ -6,6 +6,5 @@ export const errorReducer = (state=initialState, action) => {
 			return action.error
 		default: 
 			return state
-
-	}
-}
+	};
+};
