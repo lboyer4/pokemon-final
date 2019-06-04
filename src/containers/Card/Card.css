@@ -2,8 +2,8 @@ article {
 	height: 300px;
 	width: 250px;
 	border: 2px solid black;
-	background-color: blue;
-	margin: auto;
-	color: white;
+	background-color: #e3fdfd;
+	margin-top: 5px;
+	color: black;
 	text-align: center;
 }
