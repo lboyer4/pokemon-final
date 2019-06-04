@@ -2,6 +2,24 @@ import { App, mapStateToProps, mapDispatchToProps } from './App.js';
 import { setPokemon, setError, setLoading } from '../../actions';
 
 describe('mapStateToProps', () => {
+	it('should return an object with loading and error', () => {
+
+		const mockState = {
+			pokemon: ['one', 'two'],
+			loading: false,
+			error: 'error'
+		}
+
+		const expected = {
+			loading: false,
+			error: 'error'
+		}
+
+		const mappedProps = mapStateToProps(mockState)
+
+		expect(mappedProps).toEqual(expected)
+	})
+	
 	it('should return an object with a error string', () => {
 
 		const mockState = {
@@ -31,6 +49,7 @@ describe('mapStateToProps', () => {
 
 		expect(mappedProps).toEqual(expected)
 	})
+
 })
 
 describe('mapDispatchToProps', () => {
